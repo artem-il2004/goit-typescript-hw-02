@@ -16,7 +16,9 @@ interface Image {
   alt_description: string;
   description?: string;
 }
-
+interface Response {
+  results: Image[];
+}
 function App() {
 
   
@@ -40,11 +42,11 @@ function App() {
   useEffect(() => {
     if (!inputValue) return;
 
-    async function fetchData() {
+    async function fetchData() : Promise<void> {
       setLoading(true);
       setError(false);
       try {
-        const response = await axios.get("https://api.unsplash.com/search/photos", {
+        const response = await axios.get<Response>("https://api.unsplash.com/search/photos", {
           params: {
             client_id: accessKey,
             query: inputValue,
@@ -55,7 +57,7 @@ function App() {
         if (page === 1) {
           setResults(response.data.results);
         } else {
-          setResults(prevResults => [...prevResults, ...response.data.results]);
+          setResults((prevResults) => [...prevResults, ...response.data.results]);
         }
       }
       catch (error) {
