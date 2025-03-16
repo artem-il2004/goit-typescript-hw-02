@@ -1,0 +1,11 @@
+.loadMoreBtn
+{
+    border: 1px solid gray;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    margin: 15px auto;
+}
+.loadMoreBtn:hover{
+    background-color: lightgrey;
+}

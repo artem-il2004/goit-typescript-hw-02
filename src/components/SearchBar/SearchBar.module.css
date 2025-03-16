@@ -1,0 +1,33 @@
+.header
+{
+    height: 100px;
+    padding: 15px;
+    background-color: lightblue;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid rgb(151, 189, 202);
+    margin-bottom: 10px;
+}
+.form 
+{
+    display: flex;
+    gap: 10px;
+}
+.inputField
+{
+    padding: 5px 10px;
+    width: 200px;
+    border-bottom: 1px solid black;
+}
+.subBtn
+{
+    padding: 5px;
+    border: 1px solid #212121;
+    cursor: pointer;
+    transition: 300ms;
+}
+.subBtn:hover 
+{
+    background-color: rgb(132, 164, 175);
+}
